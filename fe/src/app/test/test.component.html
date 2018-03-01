@@ -1,0 +1,10 @@
+<div>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <label for="text">Text</label>
+    <input type="text" id="text" name="text" ngModel required>
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+  </form>
+  <ul *ngFor="let text of textArr">
+    <li>{{text}}</li>
+  </ul>
+</div>

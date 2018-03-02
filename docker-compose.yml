@@ -1,0 +1,25 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - mongo-volume:/home/node
+  smart-house-fe:
+    build: ./fe
+    command: npm run dev
+    volumes:
+      - ./fe:/usr/src/project
+      - /usr/src/project/node_modules
+    ports:
+      - 4200:4200
+  smart-house-be:
+    build: ./be
+    command: npm run dev
+    volumes:
+      - ./be:/usr/src/project
+      - /usr/src/project/node_modules
+    ports:
+      - 3000:3000
+      - 9229:9229
+volumes:
+  mongo-volume:

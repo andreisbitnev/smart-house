@@ -8,7 +8,7 @@ var users = require('./routes/users');
 var test = require('./routes/test');
 var app = express();
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://mongodb/test');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
